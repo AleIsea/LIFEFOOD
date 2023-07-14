@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="
+https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.css
+" rel="stylesheet">
+    <link rel="stylesheet" href="alimentos.css">
+	<title>Carousel / Slider con Glider.js</title>
+</head>
+<body>
+	<div class="contenedor">
+		<main class="contenido-principal">
+			<img src="img/1.png" alt="Dome of the German Bundestag" class="contenido-principal__imagen">
+			<div class="contenido-principal__contenedor">
+				<h1 class="contenido-principal__titulo">Dome of the German Bundestag</h1>
+				<p class="contenido-principal__resumen">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a commodo orci. Nulla ipsum ante, auctor a odio id, bibendum accumsan mauris.
+				</p>
+				<p class="contenido-principal__resumen">
+					Fusce malesuada mollis ante, at elementum mi maximus nec. Praesent volutpat, tortor sed condimentum sagittis, mi diam fringilla nibh.
+				</p>
+			</div>
+		</main>
+
+		<div class="carousel">
+			<div class="carousel__contenedor">
+				<button aria-label="Anterior" class="carousel__anterior">
+					<i class="fas fa-chevron-left"></i>
+				</button>
+
+				<div class="carousel__lista">
+					<div class="carousel__elemento">
+						<img src="https://img.freepik.com/premium-photo/floral-dark-background-top-view-flowers-vintage-style-generative-ai_788189-2047.jpg" alt="Rock and Roll Hall of Fame">
+						<p>Rock and Roll Hall of Fame</p>
+					</div>
+					<div class="carousel__elemento">
+						<img src="https://img.freepik.com/premium-photo/floral-dark-background-top-view-flowers-vintage-style-generative-ai_788189-2047.jpg" alt="Constitution Square - Tower I">
+						<p>Constitution Square - Tower I</p>
+					</div>
+					<div class="carousel__elemento">
+						<img src="https://img.freepik.com/premium-photo/floral-dark-background-top-view-flowers-vintage-style-generative-ai_788189-2047.jpg" alt="Empire State Building">
+						<p>Empire State Building</p>
+					</div>
+					<div class="carousel__elemento">
+						<img src="https://img.freepik.com/premium-photo/floral-dark-background-top-view-flowers-vintage-style-generative-ai_788189-2047.jpg" alt="Harmony Tower">
+						<p>Harmony Tower</p>
+					</div>
+	
+					<div class="carousel__elemento">
+						<img src="https://img.freepik.com/premium-photo/floral-dark-background-top-view-flowers-vintage-style-generative-ai_788189-2047.jpg" alt="Empire State Building">
+						<p>Empire State Building</p>
+					</div>
+					<div class="carousel__elemento">
+						<img src="https://img.freepik.com/premium-photo/floral-dark-background-top-view-flowers-vintage-style-generative-ai_788189-2047.jpg" alt="Harmony Tower">
+						<p>Harmony Tower</p>
+					</div>
+					<div class="carousel__elemento">
+						<img src="https://img.freepik.com/premium-photo/floral-dark-background-top-view-flowers-vintage-style-generative-ai_788189-2047.jpg" alt="Empire State Building">
+						<p>Empire State Building</p>
+					</div>
+					<div class="carousel__elemento">
+						<img src="https://img.freepik.com/premium-photo/floral-dark-background-top-view-flowers-vintage-style-generative-ai_788189-2047.jpg" alt="Harmony Tower">
+						<p>Harmony Tower</p>
+					</div>
+				</div>
+
+				<button aria-label="Siguiente" class="carousel__siguiente">
+					<i class="fas fa-chevron-right"></i>
+				</button>
+			</div>
+
+			<div role="tablist" class="carousel__indicadores"></div>
+		</div>
+	</div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.js"></script>
+
+	<script>
+        window.addEventListener('load', function(){
+	new Glider(document.querySelector('.carousel__lista'), {
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: '.carousel__indicadores',
+		arrows: {
+			prev: '.carousel__anterior',
+			next: '.carousel__siguiente'
+		},
+		responsive: [
+			{
+			  // screens greater than >= 775px
+			  breakpoint: 450,
+			  settings: {
+				// Set to `auto` and provide item width to adjust to viewport
+				slidesToShow: 2,
+				slidesToScroll: 2
+			  }
+			},{
+			  // screens greater than >= 1024px
+			  breakpoint: 800,
+			  settings: {
+				slidesToShow: 4,
+				slidesToScroll: 4
+			  }
+			}
+		]
+	});
+});
+    </script>
+</body>
+</html>

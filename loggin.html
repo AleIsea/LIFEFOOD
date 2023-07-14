@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>Document</title>
+</head>
+<body>
+
+    <header class="hero">
+        <nav class="nav container" id="nav">
+            <div class="container__logo">
+                <a href="main.html">
+                    <h2 class="nav__logo">
+                        <div class="logo">
+                            <iconify-icon icon="material-symbols:menstrual-health" style="color: green;" ></iconify-icon>
+                        </div>
+                        Bienestar y salud
+                    </h2>
+                </a>
+
+      
+                      
+            </div>
+      
+            <ul class="nav__links">
+                  <li class="nav__item">
+                      <a href="main.html" class="link">Inicio</a>
+                  </li>
+      
+      
+                  <li class="nav__item">
+                      <a href="equipo.html" class="link">Equipo</a>
+                  </li>
+      
+            </ul>
+
+            <a href="" class="nav__hamburguer nav__hamburguer-logg">
+                <iconify-icon icon="mdi:user" class="nav__icon" style="color: green;"></iconify-icon>
+            </a>
+      
+            <a href="#nav" class="nav__hamburguer">
+                  <iconify-icon icon="formkit:open" class="nav__icon" style="color: green;"></iconify-icon>
+            </a>
+      
+            <a href="#" class="nav__close">
+                <iconify-icon icon="ph:x" class="nav__icon" style="color: rgb(249, 249, 249);"></iconify-icon>
+            </a>
+      
+        </nav>     
+    </header>
+
+    <main class="main__section">
+
+        <section class="loggin">
+            <form id = "contacto" class="form__contact" >
+                <h2 class="title__loggin animate__animated animate__backInDown">CONTACTANOS</h2>
+
+                <div class="img__form-loggin">
+                    <img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Email_campaign_re_m6k5.svg" alt="">
+                </div>
+                
+
+                <div class="data__name-log"> 
+                    <div class="name__input">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder= "ej: Alejandro">
+                        <div class="nombre text-danger "></div>
+                    </div>
+
+                    <div >
+                        <label for="apellido">Apellido</label>
+                        <input type="text" class="form-control" name="apellido" id="apellido" placeholder= "ej: Isea">
+                        <div class="apellido text-danger"></div>
+                    </div>
+
+                    <div>
+                        <label for="correo">Correo</label>
+                        <input type="email" class="form-control" name="correo" id="correo" placeholder= "ej: aleisea@mail.com">
+                        <div class="correo text-danger"></div>
+                        
+                    </div> 
+
+                    <div>
+                        <label for="mensaje">Mensaje</label>
+                        <textarea name="mensaje" id="mensaje" class="form-control" placeholder="Descripcion"></textarea>
+                        <div class="mensaje text-danger"></div>
+                    </div> 
+
+                    <div class="boton__send">
+                        <button type="submit">
+                            Enviar
+                        </button>
+                        <p class="warnings" id="warnings"></p>
+                        
+                        <p class="warnings" id="warnings"></p>
+                    </div>
+
+                    
+
+
+
+                </div>
+
+                
+                
+
+                
+                          
+            </form>
+        </section>
+        
+        <footer class="footer" id="footer">
+            <div class="container__links_footer">
+                <div class="container__uade">
+                    <iconify-icon icon="la:university" style="color: green;"></iconify-icon>
+                </div>
+                <h2 class="footer__title">
+                    <a href="https://www.uade.edu.ar/" target="_blank">
+                        UADE
+                    </a>
+                </h2>
+                
+            
+            </div>
+
+            <div class="copyr">
+                <h2 class="footer__end">Alejandro Isea</h2>
+                <p>Derechos Reservados</p>
+            </div>
+
+            <div class="social__icons-footer">
+                <div>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <iconify-icon icon="skill-icons:instagram"></iconify-icon>
+                    </a>
+
+                </div>
+
+                <div>
+
+                    <a href="https://github.com/AleIsea" target="blank">
+                        <iconify-icon icon="devicon:github-wordmark" width="25" height="25"></iconify-icon>
+                    </a>
+                </div>
+
+                <div>
+                    <a href="https://www.linkedin.com">
+
+                    </a>
+                    <iconify-icon icon="ant-design:linkedin-filled" style="color: black;" width="25" height="25"></iconify-icon>
+                </div>
+                
+                
+            </div>
+
+        </footer>
+
+        
+
+    </main>
+
+    <script>
+        const nombre = document.getElementById('nombre');
+        const apellido = document.getElementById('apellido');
+        const email = document.getElementById('correo');
+        const send = document.getElementById('send');
+        const form = document.getElementById('contacto');
+        const parrrafo = document.getElementById('warnings');
+        
+        // FUNCION BOTON ENVIAR
+        form.addEventListener('submit', e=>{
+            e.preventDefault()
+            let warnings = ""
+            let entrar = false
+            let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+            parrrafo.innerHTML = ""
+            // NOMBRE
+            if(nombre.value.length < 2){
+                warnings += `El nombre no es valido <br>`
+                entrar = true
+            }
+            
+            // APELLIDO
+            if(apellido.value.length < 2){
+                warnings += `El Apellido no es valido <br>`
+                entrar = true
+            }
+            // EMAIL
+            console.log(regexEmail.test(email.value))
+            if(!regexEmail.test(email.value)){
+                warnings += `El Email no es valido <br>`
+                entrar = true
+            }
+            // CONDICION: si es correcto, envia, sino INVALIDACION
+            parrrafo.innerHTML = ""
+        
+            if(entrar){
+                parrrafo.innerHTML = warnings
+            }else{
+                parrrafo.style.color = 'green'
+                parrrafo.style.fontSize = '0.9rem'
+                parrrafo.innerHTML = "MENSAJE ENVIADO!"
+                
+            }
+        
+        
+        })
+    </script>
+    
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</body>
+</html>
